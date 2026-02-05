@@ -1,9 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { fetchGitHubRepos, filterRepos, sortRepos } from '@/lib/github'
 
+// Force dynamic behavior for this API route
+export const dynamic = 'force-dynamic'
+
 export async function GET(request: NextRequest) {
   try {
-    const { searchParams } = new URL(request.url)
+    const searchParams = request.nextUrl.searchParams
     const search = searchParams.get('search') || ''
     const language = searchParams.get('language') || undefined
     const includeForks = searchParams.get('includeForks') !== 'false'
