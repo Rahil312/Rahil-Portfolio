@@ -163,7 +163,6 @@ export function AllProjectsSection({ initialRepos = [] }: AllProjectsSectionProp
               onClick={() => {
                 setSearch('')
                 setSelectedLanguage('')
-                setIncludeForks(true)
                 setSortBy('updated')
               }}
               className="mt-4"
