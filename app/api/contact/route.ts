@@ -5,10 +5,24 @@ import { contactFormSchema } from '@/lib/validators'
 // Force dynamic behavior for this API route
 export const dynamic = 'force-dynamic'
 
-const resend = new Resend(process.env.RESEND_API_KEY)
+// Initialize Resend with error checking
+const apiKey = process.env.RESEND_API_KEY
+if (!apiKey) {
+  console.error('RESEND_API_KEY environment variable is missing')
+}
+const resend = new Resend(apiKey || 'missing-key')
 
 export async function POST(request: NextRequest) {
   try {
+    // Check if API key is available
+    if (!apiKey) {
+      console.error('RESEND_API_KEY is missing')
+      return NextResponse.json(
+        { error: 'Server configuration error. Please contact the administrator.' },
+        { status: 500 }
+      )
+    }
+
     const body = await request.json()
     
     // Validate the form data
