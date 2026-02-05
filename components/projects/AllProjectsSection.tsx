@@ -29,8 +29,8 @@ export function AllProjectsSection({ initialRepos = [] }: AllProjectsSectionProp
   // Filters
   const [search, setSearch] = useState('')
   const [selectedLanguage, setSelectedLanguage] = useState<string>('')
-  const [includeForks, setIncludeForks] = useState(true)
   const [sortBy, setSortBy] = useState<'updated' | 'stars' | 'name'>('updated')
+  const includeForks = true // Always include forks
 
   const fetchRepos = async () => {
     setLoading(true)
@@ -124,17 +124,6 @@ export function AllProjectsSection({ initialRepos = [] }: AllProjectsSectionProp
                   <option value="name">Name</option>
                 </select>
               </div>
-
-              {/* Include Forks Toggle */}
-              <label className="flex items-center space-x-2 cursor-pointer">
-                <input
-                  type="checkbox"
-                  checked={includeForks}
-                  onChange={(e) => setIncludeForks(e.target.checked)}
-                  className="rounded border-border text-primary focus:ring-primary"
-                />
-                <span className="text-sm">Include Forks</span>
-              </label>
 
               {loading && (
                 <div className="flex items-center text-sm text-muted-foreground">

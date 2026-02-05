@@ -13,8 +13,8 @@ const impactMetrics = [
 ]
 
 const techStack = [
-  'Python', 'TypeScript', 'React', 'Node.js', 'PostgreSQL', 
-  'Docker', 'Kubernetes', 'WebRTC', 'LLM APIs', 'Vector Search'
+  'Python', 'C++', 'Go', 'JavaScript', 'Java', 'Django', 'React.js', 'Node.js', 'Express.js', 
+  'PostgreSQL', 'MongoDB', 'AWS', 'GCP', 'Azure', 'Docker', 'Kubernetes', 'WebRTC', 'REST APIs', 'PyTest'
 ]
 
 export function Hero() {
@@ -34,9 +34,7 @@ export function Hero() {
           {/* Subtitle */}
           <Reveal delay={0.2}>
             <p className="mt-6 text-lg leading-8 text-muted-foreground sm:text-xl lg:text-2xl">
-              Building real-time LLM systems, retrieval pipelines, and scalable backend services.
-              <br />
-              <span className="font-semibold text-foreground">MCS @ NCSU</span> with expertise in Python microservices and GenAI workflows.
+              Building real-time LLM systems, retrieval pipelines, scalable backend services, and GenAI workflows with expertise in Python microservices.
             </p>
           </Reveal>
 
@@ -78,14 +76,13 @@ export function Hero() {
           {/* CTA Buttons */}
           <Reveal delay={0.5}>
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button size="lg" asChild>
-                <Link href="/projects">
+              <Button size="lg" asChild className="w-full sm:w-auto min-w-[200px]">
+                <Link href="/projects" className="inline-flex items-center justify-center">
                   View My Projects
-                  <ExternalLink className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
-              <Button variant="outline" size="lg" asChild>
-                <Link href="/resume">
+              <Button variant="outline" size="lg" asChild className="w-full sm:w-auto min-w-[200px]">
+                <Link href="/resume" className="inline-flex items-center justify-center">
                   Download Resume
                 </Link>
               </Button>
@@ -102,7 +99,7 @@ export function Hero() {
                 </Link>
               </Button>
               <Button variant="ghost" size="sm" asChild>
-                <Link href="https://linkedin.com/in/rahil-shukla" target="_blank" rel="noopener noreferrer">
+                <Link href="https://www.linkedin.com/in/rahil-shukla-bb8184204/" target="_blank" rel="noopener noreferrer">
                   <Linkedin className="h-5 w-5" />
                   <span className="sr-only">LinkedIn</span>
                 </Link>

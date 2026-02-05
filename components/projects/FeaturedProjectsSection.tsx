@@ -103,7 +103,7 @@ export function FeaturedProjectsSection() {
 
               <CardFooter className="pt-0">
                 <div className="flex items-center flex-wrap gap-2 w-full">
-                  {project.links.map((link) => (
+                  {project.links?.map((link) => (
                     <Button key={link.label} variant="outline" size="sm" asChild>
                       <Link href={link.url} target="_blank" rel="noopener noreferrer">
                         {link.label === 'GitHub' ? (

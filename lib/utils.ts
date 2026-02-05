@@ -6,7 +6,15 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export function formatDate(date: Date | string): string {
-  const d = typeof date === 'string' ? new Date(date) : date
+  if (typeof date === 'string') {
+    // Handle YYYY-MM format specifically
+    const [year, month] = date.split('-')
+    const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+    const monthIndex = parseInt(month) - 1 // Convert to 0-indexed
+    return `${monthNames[monthIndex]} ${year}`
+  }
+  
+  const d = date
   return d.toLocaleDateString('en-US', {
     month: 'short',
     year: 'numeric',

@@ -61,7 +61,7 @@ export function Footer() {
                 </li>
                 <li>
                   <Link 
-                    href="https://linkedin.com/in/rahil-shukla" 
+                    href="https://www.linkedin.com/in/rahil-shukla-bb8184204/" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="text-muted-foreground hover:text-primary transition-colors"
@@ -83,7 +83,7 @@ export function Footer() {
                   </Link>
                 </Button>
                 <Button variant="ghost" size="sm" asChild>
-                  <Link href="https://linkedin.com/in/rahil-shukla" target="_blank" rel="noopener noreferrer">
+                  <Link href="https://www.linkedin.com/in/rahil-shukla-bb8184204/" target="_blank" rel="noopener noreferrer">
                     <Linkedin className="h-4 w-4" />
                     <span className="sr-only">LinkedIn</span>
                   </Link>

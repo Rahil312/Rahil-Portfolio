@@ -45,11 +45,6 @@ export function RepoCard({ repo }: RepoCardProps) {
               </Link>
             </CardTitle>
             <div className="flex items-center gap-2 mt-1">
-              {repo.fork && (
-                <Badge variant="secondary" className="text-xs">
-                  Fork
-                </Badge>
-              )}
               {repo.archived && (
                 <Badge variant="outline" className="text-xs">
                   Archived

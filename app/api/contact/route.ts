@@ -1,5 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { Resend } from 'resend'
 import { contactFormSchema } from '@/lib/validators'
+
+const resend = new Resend(process.env.RESEND_API_KEY)
 
 export async function POST(request: NextRequest) {
   try {
@@ -8,33 +11,48 @@ export async function POST(request: NextRequest) {
     // Validate the form data
     const validatedData = contactFormSchema.parse(body)
     
-    // Here you would typically:
-    // 1. Send an email using a service like Resend, SendGrid, or Nodemailer
-    // 2. Store the message in a database
-    // 3. Send to a webhook or notification service
-    
-    // For now, we'll just log it and return success
-    console.log('Contact form submission:', validatedData)
-    
-    // Simulate email sending delay
-    await new Promise(resolve => setTimeout(resolve, 1000))
-    
-    // In a real implementation, you might do:
-    /*
-    await sendEmail({
-      to: process.env.CONTACT_EMAIL_TO!,
-      from: process.env.CONTACT_EMAIL_FROM!,
+    // Send email using Resend
+    const { data, error } = await resend.emails.send({
+      from: 'Portfolio Contact <onboarding@resend.dev>', // Using Resend's test domain
+      to: ['rahilshukla3122@gmail.com'],
       subject: `Portfolio Contact: ${validatedData.subject}`,
+      replyTo: validatedData.email,
       html: `
-        <h2>New Contact Form Submission</h2>
-        <p><strong>Name:</strong> ${validatedData.name}</p>
-        <p><strong>Email:</strong> ${validatedData.email}</p>
-        <p><strong>Subject:</strong> ${validatedData.subject}</p>
-        <p><strong>Message:</strong></p>
-        <p>${validatedData.message.replace(/\n/g, '<br>')}</p>
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+          <h2 style="color: #333; border-bottom: 2px solid #f0f0f0; padding-bottom: 10px;">
+            New Contact Form Submission
+          </h2>
+          
+          <div style="margin: 20px 0;">
+            <p><strong>Name:</strong> ${validatedData.name}</p>
+            <p><strong>Email:</strong> ${validatedData.email}</p>
+            <p><strong>Subject:</strong> ${validatedData.subject}</p>
+          </div>
+          
+          <div style="margin: 20px 0;">
+            <p><strong>Message:</strong></p>
+            <div style="background: #f9f9f9; padding: 15px; border-left: 4px solid #007acc; margin: 10px 0;">
+              ${validatedData.message.replace(/\n/g, '<br>')}
+            </div>
+          </div>
+          
+          <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee; color: #666; font-size: 12px;">
+            <p>This message was sent from your portfolio contact form.</p>
+            <p>Reply directly to this email to respond to ${validatedData.name}.</p>
+          </div>
+        </div>
       `
     })
-    */
+
+    if (error) {
+      console.error('Resend error details:', error)
+      return NextResponse.json(
+        { error: 'Failed to send email', details: error },
+        { status: 500 }
+      )
+    }
+
+    console.log('Email sent successfully:', data)
     
     return NextResponse.json(
       { message: 'Message sent successfully' },

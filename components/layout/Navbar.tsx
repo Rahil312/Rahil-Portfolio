@@ -87,17 +87,17 @@ export function Navbar() {
             <div className="flex items-center space-x-2">
               <Button variant="ghost" size="sm" asChild>
                 <Link href="https://github.com/Rahil312" target="_blank" rel="noopener noreferrer">
-                  <Github className="h-4 w-4" />
+                  <Github className="h-5 w-5" />
                 </Link>
               </Button>
               <Button variant="ghost" size="sm" asChild>
-                <Link href="https://linkedin.com/in/rahil-shukla" target="_blank" rel="noopener noreferrer">
-                  <Linkedin className="h-4 w-4" />
+                <Link href="https://www.linkedin.com/in/rahil-shukla-bb8184204/" target="_blank" rel="noopener noreferrer">
+                  <Linkedin className="h-5 w-5" />
                 </Link>
               </Button>
               <Button variant="ghost" size="sm" asChild>
                 <Link href="/contact">
-                  <Mail className="h-4 w-4" />
+                  <Mail className="h-5 w-5" />
                 </Link>
               </Button>
             </div>
@@ -146,17 +146,17 @@ export function Navbar() {
                 <div className="flex items-center space-x-2">
                   <Button variant="ghost" size="sm" asChild>
                     <Link href="https://github.com/Rahil312" target="_blank" rel="noopener noreferrer">
-                      <Github className="h-4 w-4" />
+                      <Github className="h-5 w-5" />
                     </Link>
                   </Button>
                   <Button variant="ghost" size="sm" asChild>
-                    <Link href="https://linkedin.com/in/rahil-shukla" target="_blank" rel="noopener noreferrer">
-                      <Linkedin className="h-4 w-4" />
+                    <Link href="https://www.linkedin.com/in/rahil-shukla-bb8184204/" target="_blank" rel="noopener noreferrer">
+                      <Linkedin className="h-5 w-5" />
                     </Link>
                   </Button>
                   <Button variant="ghost" size="sm" asChild>
                     <Link href="/contact">
-                      <Mail className="h-4 w-4" />
+                      <Mail className="h-5 w-5" />
                     </Link>
                   </Button>
                 </div>

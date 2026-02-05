@@ -18,9 +18,6 @@ const extraProjects = [
       'Built admin panel for data management',
       'Created wildlife conservation reports'
     ],
-    links: [
-      { label: 'Documentation', url: '#' }
-    ],
     status: 'Private Repository'
   },
   {
@@ -34,9 +31,6 @@ const extraProjects = [
       'Developed data augmentation pipeline',
       'Created evaluation metrics and benchmarks'
     ],
-    links: [
-      { label: 'Research Paper', url: '#' }
-    ],
     status: 'Research Project'
   },
   {
@@ -49,9 +43,6 @@ const extraProjects = [
       'Implemented cryptographic vote verification',
       'Built decentralized frontend interface',
       'Ensured voter anonymity and transparency'
-    ],
-    links: [
-      { label: 'Demo', url: '#' }
     ],
     status: 'Academic Project'
   }
@@ -112,16 +103,6 @@ export function ExtraProjectsSection() {
                       </li>
                     ))}
                   </ul>
-                </div>
-
-                {/* Links */}
-                <div className="flex flex-wrap gap-2">
-                  {project.links.map((link) => (
-                    <Button key={link.label} variant="outline" size="sm" disabled>
-                      <ExternalLink className="h-3 w-3 mr-1" />
-                      {link.label}
-                    </Button>
-                  ))}
                 </div>
               </CardContent>
             </Card>

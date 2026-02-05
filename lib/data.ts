@@ -47,7 +47,7 @@ export const featuredProjects: Project[] = [
   {
     id: 'wolfjobs',
     slug: 'wolfjobs',
-    title: 'WolfJobs (Forked)',
+    title: 'WolfJobs',
     summary: 'MERN recruiting platform with ATS parsing and match scoring, reducing screening time by 40%',
     type: 'github',
     featured: true,
@@ -63,8 +63,7 @@ export const featuredProjects: Project[] = [
       { label: 'Processing Speed', value: '<2s' }
     ],
     links: [
-      { label: 'GitHub', url: 'https://github.com/Rahil312/WolfJobs' },
-      { label: 'Live Demo', url: '#' }
+      { label: 'GitHub', url: 'https://github.com/Rahil312/WolfJobs' }
     ]
   },
   {
@@ -86,7 +85,6 @@ export const featuredProjects: Project[] = [
       { label: 'Accessibility Improvement', value: '60%' }
     ],
     links: [
-      { label: 'Research Paper', url: '#' },
       { label: 'GitHub', url: '#' }
     ]
   },
@@ -105,8 +103,7 @@ export const featuredProjects: Project[] = [
       'Created comprehensive reporting system'
     ],
     links: [
-      { label: 'GitHub', url: '#' },
-      { label: 'Documentation', url: '#' }
+      { label: 'GitHub', url: '#' }
     ]
   },
   {
@@ -128,8 +125,7 @@ export const featuredProjects: Project[] = [
       { label: 'Efficiency', value: '85%' }
     ],
     links: [
-      { label: 'GitHub', url: '#' },
-      { label: 'Benchmark Results', url: '#' }
+      { label: 'GitHub', url: '#' }
     ]
   }
 ]
@@ -137,72 +133,71 @@ export const featuredProjects: Project[] = [
 // Experience data
 export const experiences: Experience[] = [
   {
-    company: 'LiveKit',
+    company: 'Cogbee',
     role: 'AI Engineer Intern',
-    location: 'Remote',
+    location: 'North Carolina, USA',
     startDate: '2025-05',
     endDate: '2025-07',
     bullets: [
-      'Orchestrated WebRTC sessions supporting 30+ concurrent LLM interactions',
-      'Implemented real-time WebSocket communication for streaming STT/TTS',
-      'Developed automated LLM evaluation system reducing manual review effort',
-      'Deployed scalable solutions using Docker and Kubernetes'
+      'Designed, built, and shipped Python REST microservices to orchestrate LiveKit WebRTC sessions and LLM prompt-loop dialogues over WebSockets, supporting 30+ concurrent sessions with robust session lifecycle management',
+      'Integrated OpenAI STT/TTS with asynchronous processing and streaming I/O, achieving sub-second transcription latency and real-time audio synthesis for conversational turn-taking',
+      'Implemented automated LLM output evaluation (structured Q&A, composite scoring, soft-skill badges), reducing manual review by 60% and standardizing outputs for downstream product/analytics consumption',
+      'Containerized services with Docker and deployed/managed them on Kubernetes, improving environment consistency and enabling reliable rollouts of backend microservices'
     ],
-    tech: ['WebRTC', 'WebSockets', 'STT/TTS', 'Docker', 'Kubernetes', 'LLM APIs'],
+    tech: ['Python', 'REST APIs', 'LiveKit', 'WebRTC', 'WebSockets', 'LLM', 'OpenAI', 'STT/TTS', 'Docker', 'Kubernetes'],
     metrics: [
       { label: 'Concurrent Sessions', value: '30+' },
-      { label: 'Latency', value: '<1s' }
+      { label: 'Latency', value: '<1s' },
+      { label: 'Manual Review Reduction', value: '60%' }
     ]
   },
   {
-    company: 'Tech Company',
-    role: 'Python Intern Developer / ML Intern',
-    location: 'Remote',
+    company: 'AVI – Web Solutions',
+    role: 'Python Intern Developer',
+    location: 'Gujarat, India',
     startDate: '2024-01',
     endDate: '2024-06',
     bullets: [
-      'Built multilingual document processing pipeline with embeddings generation',
-      'Implemented Postgres vector storage handling 50k+ document chunks',
-      'Developed top-k semantic search with sub-second response times',
-      'Optimized vector similarity search algorithms for large-scale retrieval'
+      'Built a multilingual document processing pipeline using Python, Pandoc, and LangChain: file conversion → chunking → embeddings → storage in PostgreSQL to enable fast retrieval for internal users',
+      'Stored OpenAI embeddings in a PostgreSQL vector database and delivered top-k semantic search in 200ms over 50k+ chunks, improving search relevance and retrieval speed'
     ],
-    tech: ['Python', 'PostgreSQL', 'Vector Embeddings', 'Semantic Search', 'NLP'],
+    tech: ['Python', 'Pandoc', 'LangChain', 'PostgreSQL', 'Vector Embeddings', 'OpenAI', 'Semantic Search'],
     metrics: [
       { label: 'Documents Processed', value: '50k+' },
-      { label: 'Search Response Time', value: '<1s' }
+      { label: 'Search Response Time', value: '200ms' }
     ]
   },
   {
-    company: 'Software Company',
+    company: 'Vonly – Data Analytics Solutions',
     role: 'Software Engineer Intern',
-    location: 'Remote',
+    location: 'Gujarat, India',
     startDate: '2023-05',
     endDate: '2023-07',
     bullets: [
-      'Developed comprehensive dashboards for metadata consolidation',
-      'Implemented data deduplication algorithms reducing duplicates by 25%',
-      'Built automated reporting system for data quality metrics',
-      'Optimized database queries improving dashboard load times'
+      'Built interactive Redash analytics dashboards for 10+ stakeholders, reducing recurring reporting turnaround from hours to minutes',
+      'Developed a C# + Python system to map and consolidate metadata entities across platforms, improving ID consistency and reducing duplicate/incorrect mappings by 25%'
     ],
-    tech: ['React', 'Node.js', 'PostgreSQL', 'Data Analytics', 'Dashboard Development'],
+    tech: ['Redash', 'Analytics', 'Dashboards', 'C#', 'Python', 'Data Mapping', 'Metadata Management'],
     metrics: [
+      { label: 'Stakeholders Served', value: '10+' },
       { label: 'Duplicate Reduction', value: '25%' },
-      { label: 'Load Time Improvement', value: '40%' }
+      { label: 'Reporting Speed', value: 'Hours to Minutes' }
     ]
   },
   {
-    company: 'North Carolina State University',
-    role: 'Teaching Assistant',
-    location: 'Raleigh, NC',
+    company: 'DAIICT',
+    role: 'Teaching Assistant - Calculus',
+    location: 'Gujarat, India',
     startDate: '2023-08',
     endDate: '2024-01',
     bullets: [
-      'Assisted students with software engineering coursework and projects',
-      'Conducted lab sessions for data structures and algorithms',
-      'Provided mentorship on coding best practices and problem-solving',
-      'Graded assignments and provided detailed feedback for improvement'
+      'Led weekly Calculus tutorials/office hours for 120+ students; graded 300+ submissions with a consistent rubric, improving grading consistency and course experience'
     ],
-    tech: ['Java', 'Python', 'Data Structures', 'Algorithms', 'Teaching']
+    tech: ['Calculus', 'Mathematics', 'Teaching', 'Academic Support'],
+    metrics: [
+      { label: 'Students Taught', value: '120+' },
+      { label: 'Submissions Graded', value: '300+' }
+    ]
   }
 ]
 
@@ -213,16 +208,17 @@ export const education: Education[] = [
     degree: 'Master of Computer Science',
     field: 'Computer Science',
     startDate: '2024-08',
-    endDate: null,
+    endDate: '2026-05',
     gpa: '4.0',
     location: 'Raleigh, NC'
   },
   {
-    institution: 'DA-IICT',
-    degree: 'Bachelor of Technology',
-    field: 'Information and Communication Technology',
+    institution: 'Dhirubhai Ambani Institute of Information and Communication Technology',
+    degree: 'Bachelor of Technology (Honors)',
+    field: 'ICT, Computational Science',
     startDate: '2020-08',
     endDate: '2024-05',
+    gpa: '8.25/10',
     location: 'India'
   }
 ]

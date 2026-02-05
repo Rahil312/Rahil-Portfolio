@@ -5,21 +5,22 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Section } from '@/components/ui/Layout'
 import { Reveal, Stagger, StaggerItem } from '@/components/motion/Reveal'
 
+// Contact methods configuration
 const contactMethods = [
   {
     icon: Mail,
     title: 'Email',
     description: 'Send me an email directly',
-    value: 'rahil.shukla@example.com',
-    href: 'mailto:rahil.shukla@example.com',
+    value: 'rahilshukla3122@gmail.com',
+    href: 'mailto:rahilshukla3122@gmail.com',
     primary: true
   },
   {
     icon: Linkedin,
     title: 'LinkedIn',
     description: 'Connect with me professionally',
-    value: 'linkedin.com/in/rahil-shukla',
-    href: 'https://linkedin.com/in/rahil-shukla',
+    value: 'linkedin.com/in/rahil-shukla-bb8184204/',
+    href: 'https://www.linkedin.com/in/rahil-shukla-bb8184204/',
     primary: false
   },
   {
@@ -34,7 +35,7 @@ const contactMethods = [
 
 const availability = {
   status: 'Available for opportunities',
-  description: 'Currently open to full-time positions, internships, and freelance projects',
+  description: 'Currently open to full-time positions',
   preferredContact: 'Email or LinkedIn',
   responseTime: 'Within 24-48 hours',
   timezone: 'EST (Eastern Time)'
@@ -71,12 +72,11 @@ export function ContactInfo() {
                           <div className="flex-1">
                             <h3 className="font-semibold text-lg">{method.title}</h3>
                             <p className="text-muted-foreground mb-2">{method.description}</p>
-                            <Button 
-                              variant={method.primary ? "default" : "outline"}
-                              onClick={() => window.open(method.href, '_blank')}
-                            >
-                              {method.value}
-                            </Button>
+                            <Link href={method.href} target="_blank" rel="noopener noreferrer">
+                              <Button variant={method.primary ? "default" : "outline"}>
+                                {method.value}
+                              </Button>
+                            </Link>
                           </div>
                         </div>
                       </CardContent>
@@ -95,7 +95,7 @@ export function ContactInfo() {
                   <div className="w-3 h-3 bg-green-500 rounded-full"></div>
                   <span>{availability.status}</span>
                 </CardTitle>
-                <CardDescription>
+                <CardDescription className="text-lg font-medium">
                   {availability.description}
                 </CardDescription>
               </CardHeader>
@@ -133,10 +133,6 @@ export function ContactInfo() {
                   <li className="flex items-start">
                     <span className="text-primary mr-2 mt-1.5 block h-1 w-1 rounded-full bg-current" />
                     AI/ML and data engineering projects
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-primary mr-2 mt-1.5 block h-1 w-1 rounded-full bg-current" />
-                    Freelance and consulting work
                   </li>
                   <li className="flex items-start">
                     <span className="text-primary mr-2 mt-1.5 block h-1 w-1 rounded-full bg-current" />

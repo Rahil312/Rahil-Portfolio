@@ -12,6 +12,7 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://rahilshukla.com'),
   title: {
     default: 'Rahil Shukla - Applied AI & Full-Stack Engineer',
     template: '%s | Rahil Shukla'
@@ -23,7 +24,6 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://rahilshukla.com',
     title: 'Rahil Shukla - Applied AI & Full-Stack Engineer',
     description: 'Applied AI / Full-Stack Engineer building real-time LLM systems, retrieval, and scalable backend services.',
     siteName: 'Rahil Shukla Portfolio',

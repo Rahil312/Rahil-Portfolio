@@ -8,8 +8,26 @@ const skillCategories = [
   {
     title: 'Programming Languages',
     icon: Code,
-    skills: ['Python', 'TypeScript', 'JavaScript', 'Java', 'C++', 'Go', 'SQL'],
+    skills: ['Python', 'C', 'C++', 'Go', 'JavaScript', 'SQL', 'Java', 'NoSQL'],
     description: 'Proficient in multiple programming languages for different use cases'
+  },
+  {
+    title: 'Backend/Frameworks/Databases',
+    icon: Database,
+    skills: ['Django', 'Node.js', 'React.js', 'Express.js', 'REST APIs', 'WebSockets', 'MongoDB', 'PostgreSQL'],
+    description: 'Backend frameworks, APIs, and database technologies'
+  },
+  {
+    title: 'Cloud/DevOps/Tools',
+    icon: Cloud,
+    skills: ['AWS', 'GCP', 'Azure', 'Docker', 'Linux', 'Git', 'CI/CD (GitHub Actions)', 'Postman', 'Kubernetes'],
+    description: 'Cloud platforms, containerization, DevOps tools, and deployment'
+  },
+  {
+    title: 'Testing',
+    icon: Wrench,
+    skills: ['PyTest', 'Unit Testing', 'Integration Testing', 'API Testing'],
+    description: 'Testing frameworks and methodologies for reliable software'
   },
   {
     title: 'AI/ML & Data Science',
@@ -20,33 +38,9 @@ const skillCategories = [
   {
     title: 'Web Development',
     icon: Globe,
-    skills: ['React', 'Next.js', 'Node.js', 'Express', 'HTML/CSS', 'Tailwind CSS', 'REST APIs'],
-    description: 'Modern web technologies and frameworks'
-  },
-  {
-    title: 'Databases & Storage',
-    icon: Database,
-    skills: ['PostgreSQL', 'MongoDB', 'MySQL', 'Redis', 'Vector Databases', 'Elasticsearch'],
-    description: 'Relational and NoSQL databases, vector storage'
-  },
-  {
-    title: 'DevOps & Cloud',
-    icon: Cloud,
-    skills: ['Docker', 'Kubernetes', 'AWS', 'GCP', 'CI/CD', 'Git', 'Linux'],
-    description: 'Cloud platforms, containerization, and deployment'
-  },
-  {
-    title: 'Tools & Technologies',
-    icon: Wrench,
-    skills: ['WebRTC', 'WebSockets', 'GraphQL', 'Nginx', 'RabbitMQ', 'Elasticsearch', 'Monitoring'],
-    description: 'Specialized tools and technologies for system design'
+    skills: ['React', 'Next.js', 'HTML/CSS', 'Tailwind CSS', 'JavaScript', 'TypeScript'],
+    description: 'Modern web technologies and frontend frameworks'
   }
-]
-
-const proficiencyLevels = [
-  { name: 'Expert', color: 'bg-green-500', count: 8 },
-  { name: 'Proficient', color: 'bg-blue-500', count: 15 },
-  { name: 'Familiar', color: 'bg-yellow-500', count: 12 }
 ]
 
 export function SkillsSection() {
@@ -59,23 +53,6 @@ export function SkillsSection() {
             A comprehensive overview of my technical expertise across programming languages, 
             frameworks, tools, and technologies.
           </p>
-        </div>
-      </Reveal>
-
-      {/* Proficiency Legend */}
-      <Reveal delay={0.1}>
-        <div className="flex justify-center mb-12">
-          <Card className="p-4">
-            <div className="flex items-center space-x-6 text-sm">
-              <span className="font-medium">Proficiency Levels:</span>
-              {proficiencyLevels.map((level) => (
-                <div key={level.name} className="flex items-center space-x-2">
-                  <div className={`w-3 h-3 rounded-full ${level.color}`} />
-                  <span>{level.name} ({level.count})</span>
-                </div>
-              ))}
-            </div>
-          </Card>
         </div>
       </Reveal>
 
@@ -120,7 +97,7 @@ export function SkillsSection() {
       </Stagger>
 
       {/* Additional Skills Note */}
-      <Reveal delay={0.4}>
+      {/* <Reveal delay={0.4}>
         <div className="mt-12 text-center">
           <Card className="p-6 max-w-3xl mx-auto">
             <p className="text-muted-foreground">
@@ -130,7 +107,7 @@ export function SkillsSection() {
             </p>
           </Card>
         </div>
-      </Reveal>
+      </Reveal> */}
     </Section>
   )
 }
